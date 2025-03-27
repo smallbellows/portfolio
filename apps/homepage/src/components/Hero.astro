@@ -1,0 +1,17 @@
+---
+interface Props {
+    title: string;
+    tagline?: string;
+    align?: 'start' | 'center';
+}
+
+const { align = 'center', tagline, title } = Astro.props;
+---
+
+<section class:list={['hero', { align }]}>
+    <div class="hero-body">
+        <p class="title">{title}</p>
+        <p class="subtitle">{tagline}</p>
+        <slot />
+    </div>
+</section>

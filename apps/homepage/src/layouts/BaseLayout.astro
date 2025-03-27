@@ -1,0 +1,25 @@
+---
+import '../styles/global.sass';
+
+// Component Imports
+import MainHead from '../components/MainHead.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const { title, description } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <MainHead title={title} description={description} />
+    </head>
+    <body class="has-navbar-fixed-top">
+        <Nav />
+        <section class="section">
+            <div class="container">
+                <slot />
+            </div>
+        </section>
+        <Footer />
+    </body>
+</html>

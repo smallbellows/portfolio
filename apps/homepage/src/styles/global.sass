@@ -1,0 +1,45 @@
+// Set your brand colors
+
+$night: hsla(340, 13%, 5%, 1);
+$magnolia: hsla(280, 23%, 95%, 1);
+$caribbean-current: hsla(183, 31%, 34%, 1);
+$flame: hsla(17, 83%, 54%, 1);
+$mustard: hsla(46, 100%, 64%, 1);
+
+
+// Override global Sass variables from the /utilities folder
+@use "bulma/sass/utilities" with (
+  $family-primary: 'Quattrocento, sans-serif',
+  $black: $night,
+  $light: $magnolia,
+  $text: $night,
+  $link: $caribbean-current,
+  $primary: $flame,
+  $info: $mustard
+);
+
+// Import the components you need
+@forward "bulma/sass/base";
+@forward "bulma/sass/components/card";
+@forward "bulma/sass/components/modal";
+@forward "bulma/sass/components/navbar";
+@forward "bulma/sass/elements/button";
+@forward "bulma/sass/elements/block";
+@forward "bulma/sass/elements/box";
+@forward "bulma/sass/layout/hero";
+@forward "bulma/sass/elements/icon";
+@forward "bulma/sass/elements/content";
+@forward "bulma/sass/elements/notification";
+@forward "bulma/sass/elements/progress";
+@forward "bulma/sass/elements/tag";
+@forward "bulma/sass/elements/title";
+@forward "bulma/sass/layout";
+@forward "bulma/sass/grid";
+@forward "bulma/sass/helpers";
+@forward "bulma/sass/utilities/mixins";
+
+// Import the themes so that all CSS variables have a value
+@forward "bulma/sass/themes";
+
+body
+  background: var(--bulma-color-light)

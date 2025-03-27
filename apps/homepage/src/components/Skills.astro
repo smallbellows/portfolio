@@ -1,0 +1,99 @@
+---
+import Icon from './Icon.astro';
+const defaultIconProps = {
+    color: 'var(--bulma-primary)',
+    size: '2.5rem',
+};
+---
+
+<section class="grid">
+    <div class="cell">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-icon">
+                    <Icon icon="terminal-window" {...defaultIconProps} />
+                </div>
+                <h2 class="card-header-title">Full Stack</h2>
+            </div>
+            <div class="card-content">
+                <p>Node.js APIs - Express, GraphQL, tRPC</p>
+                <p>Serverless - Google Cloud Functions, AWS Lambda</p>
+                <p>React, Apollo</p>
+                <p>PostgreSQL, BigQuery, Redis</p>
+            </div>
+        </div>
+    </div>
+    <div class="cell">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-icon">
+                    <Icon icon="cloud-check" {...defaultIconProps} />
+                </div>
+                <h2 class="card-header-title">Cloud Infrastructure</h2>
+            </div>
+            <div class="card-content">
+                <p>Google and AWS</p>
+                <p>Netlify</p>
+                <p>Github Actions</p>
+            </div>
+        </div>
+    </div>
+    <div class="cell">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-icon">
+                    <Icon icon="users" {...defaultIconProps} />
+                </div>
+                <h2 class="card-header-title">Collaboration</h2>
+            </div>
+            <div class="card-content">
+                <p>Cross-team project lead. Product-line team manager</p>
+                <p>Product, UX, QA, Data Science, Data Engineers, Firmware</p>
+                <p>Customer Support/Sales</p>
+            </div>
+        </div>
+    </div>
+    <div class="cell">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-icon">
+                    <Icon icon="puzzle" {...defaultIconProps} />
+                </div>
+                <h2 class="card-header-title">Creative Problem Solving</h2>
+            </div>
+            <div class="card-content">
+                <p>Legacy codebases</p>
+                <p>Greenfield projects</p>
+            </div>
+        </div>
+    </div>
+    <div class="cell">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-header-icon">
+                    <Icon icon="compass" {...defaultIconProps} />
+                </div>
+                <h2 class="card-header-title">Leadership</h2>
+            </div>
+            <div class="card-content">
+                <p>Team management</p>
+                <p>Leadership coaching</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style lang="sass">
+    @use "bulma/sass/utilities/mixins"
+    .card
+        --bulma-card-header-shadow: unset
+        height: 100%
+
+    .grid
+        grid-template-columns: auto
+        @include mixins.tablet
+            --bulma-grid-column-min: 30%
+            grid-template-columns: repeat(auto-fit, minmax(var(--bulma-grid-column-min), 1fr))
+            grid-auto-rows: 1fr
+            grid-template-rows: unset
+</style>

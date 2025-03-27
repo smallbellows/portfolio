@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout
+    title="About | Jeanine White"
+    description="About Jeanine White Lorem Ipsum"
+>
+    <div>
+        <main>
+            <Hero
+                title="About"
+                tagline="Thanks for taking the time to learn more about me."
+            />
+
+            <section>
+                <h2>Background</h2>
+                <div>
+                    <p>
+                        I started in web and software development about a decade
+                        ago, never planning on it being my career and passion. I
+                        started out with WordPress websites for non-profits and
+                        friends' side-projects, left my previous career to take
+                        a 12-week bootcamp, and now I'm a full-stack developer
+                        and team manager. I've worked with legacy codebases,
+                        been the lead backend developer as our team built a
+                        brand-new web application, and even managed to learn to
+                        love SQL.
+                    </p>
+                </div>
+            </section>
+            <section>
+                <h2>Education</h2>
+                <div>
+                    <p>
+                        I have an B.Sc. in Ecology. I attended RED Academy in
+                        Vancouver, finishing as the top student in the Front-End
+                        Web Developer Professional Program. I also have taken a
+                        6-month Leadership Coaching Program.
+                    </p>
+                    <p></p>
+                </div>
+            </section>
+            <section>
+                <h2>Skills</h2>
+                <div>
+                    <p>
+                        I'm primarily a full-stack javascript developer, with a
+                        focus on Node.js APIs. I've built RESTful APIs, GraphQL
+                        APIs, tRPC-esque APIs and many serverless systems. I've
+                        worked with a variety of front-end frameworks, but I'm
+                        most comfortable with React. Databases-wise, I currently
+                        work with PostgreSQL, BigQuery, and Redis. I've got
+                        fairly extensive experience with Google Cloud Platform,
+                        mainly Cloud Run, Cloud Run Functions, and Scheduled
+                        Jobs. I've also worked with AWS, mainly Lambda and
+                        ElasticBeanstalk. I've configured Docker containers,
+                        written deployment scripts in bash, and CI/CD pipelines
+                        with GitHub Actions.
+                    </p>
+                    <p>
+                        I'm very comfortable working with geospatial data,
+                        manipulating complex timeseries data,
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <ContactCTA />
+    </div>
+</BaseLayout>
