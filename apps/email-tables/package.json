@@ -1,0 +1,16 @@
+{
+    "name": "email-tables",
+    "type": "module",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "email dev"
+    },
+    "devDependencies": {
+        "react-email": "4.0.3"
+    },
+    "dependencies": {
+        "@react-email/components": "0.0.35",
+        "react": "19.1.0",
+        "react-dom": "19.1.0"
+    }
+}
