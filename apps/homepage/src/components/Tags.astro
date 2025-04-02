@@ -1,0 +1,34 @@
+---
+interface Props {
+    tags: string[];
+    variant?: 'brand' | 'neutral';
+    size?: 'small' | 'medium' | 'large';
+    layout?: 'default' | 'centered';
+}
+const {
+    tags,
+    variant = 'neutral',
+    size = 'medium',
+    layout = 'default',
+} = Astro.props;
+---
+
+<div
+    class:list={[
+        'tags',
+        {
+            'are-medium': size === 'medium',
+            'are-small': size === 'small',
+            'are-large': size === 'large',
+        },
+        { 'is-justify-content-center': layout === 'centered' },
+    ]}
+>
+    {
+        tags.map((t) => (
+            <div class:list={['tag', { 'is-primary': variant === 'brand' }]}>
+                {t}
+            </div>
+        ))
+    }
+</div>

@@ -1,15 +1,36 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import Tags from './Tags.astro';
 
 interface Props {
-	project: CollectionEntry<'work'>;
+    project: CollectionEntry<'work'>;
 }
 
 const { data, id } = Astro.props.project;
 ---
 
-<a href={`/work/${id}`}>
-	<span>{data.title}</span>
-	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
+<a href={`/work/${id}`} class="card box">
+    <div class="card-header">
+        <span class="subtitle">{data.title}</span>
+    </div>
+    <div class="card-content">
+        {
+            data.img && (
+                <Image
+                    src={data.img}
+                    alt={data.img_alt ?? ''}
+                    height={200}
+                    loading="lazy"
+                />
+            )
+        }
+        <Tags tags={data.tags} variant="brand" size="small" />
+    </div>
 </a>
 
+<style lang="sass">
+    .card
+        --bulma-card-header-shadow: unset
+        height: 100%
+</style>

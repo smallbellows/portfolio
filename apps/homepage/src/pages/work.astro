@@ -9,28 +9,28 @@ import Hero from '../components/Hero.astro';
 import Grid from '../components/Grid.astro';
 
 const projects = (await getCollection('work')).sort(
-	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+    (a, b) => a.data.sortOrder - b.data.sortOrder
 );
 ---
 
 <BaseLayout>
-	<div>
-		<main>
-			<Hero
-				title="My Work"
-				tagline="See my most recent projects below to get an idea of my past experience."
-				align="start"
-			/>
-			<Grid variant="offset">
-				{
-					projects.map((project) => (
-						<li>
-							<PortfolioPreview project={project} />
-						</li>
-					))
-				}
-			</Grid>
-		</main>
-		<ContactCTA />
-	</div>
+    <div>
+        <main>
+            <Hero
+                title="My Work"
+                tagline="Read about some of my projects and experiments to get some sense of my style and past experience."
+                align="start"
+            />
+            <Grid>
+                {
+                    projects.map((project) => (
+                        <li>
+                            <PortfolioPreview project={project} />
+                        </li>
+                    ))
+                }
+            </Grid>
+        </main>
+        <ContactCTA />
+    </div>
 </BaseLayout>
