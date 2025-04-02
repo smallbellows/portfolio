@@ -25,7 +25,17 @@ const projects = (await getCollection('work'))
 <BaseLayout>
     <div>
         <div>
-            <header></header>
+            <header class="pb-2">
+                <div class="hero is-light">
+                    <div class="hero-body is-vcentered centered">
+                        <h3 class="title">Hi, I'm Sara</h3>
+                        <p class="subtitle">
+                            Full-stack software developer and team manager based
+                            in Vancouver, BC
+                        </p>
+                    </div>
+                </div>
+            </header>
 
             <Skills />
         </div>
@@ -60,3 +70,9 @@ const projects = (await getCollection('work'))
         <ContactCTA />
     </div>
 </BaseLayout>
+
+<style>
+    .is-vcentered.centered {
+        text-align: center;
+    }
+</style>

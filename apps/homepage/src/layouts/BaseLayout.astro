@@ -23,3 +23,8 @@ const { title, description } = Astro.props;
         <Footer />
     </body>
 </html>
+
+<style lang="sass">
+    body.has-navbar-fixed-top
+        padding-top: calc(var(--bulma-navbar-height) * 2.5)
+</style>

@@ -33,13 +33,13 @@ const isCurrentPage = (href: string) => {
 ---
 
 <nav
-    class="navbar is-fixed-top section"
+    class="navbar is-fixed-top is-link section"
     role="navigation"
     aria-label="main navigation"
 >
     <div class="navbar-brand">
-        <a href="/" class="navbar-item title">
-            <Icon icon="terminal-window" size="1.6em" />
+        <a href="/" class="navbar-item is-size-4">
+            <Icon icon="tulip" size="1.6em" />
             Sara Given
         </a>
         <a
@@ -56,19 +56,17 @@ const isCurrentPage = (href: string) => {
         </a>
     </div>
     <div class="navbar-menu" id="navMenu">
-        <div class="navbar-start is-align-items-center is-gap-2">
+        <div class="navbar-end is-size-5">
             {
                 textLinks.map((textLink) => (
                     <a
-                        class={`tag is-medium ${isCurrentPage(textLink.href) ? 'is-primary is-light' : ''}`}
+                        class={`navbar-item is-tab ${isCurrentPage(textLink.href) ? 'is-active' : ''}`}
                         href={textLink.href}
                     >
                         {textLink.label}
                     </a>
                 ))
             }
-        </div>
-        <div class="navbar-end">
             {
                 iconLinks.map((iconLink) => (
                     <a
@@ -84,34 +82,38 @@ const isCurrentPage = (href: string) => {
             }
         </div>
     </div>
-</nav>
 
-<style>
-    .navbar-menu.is-active > div {
-        display: flex;
-        justify-content: center;
-    }
-</style>
+    <style>
+        .navbar-item.is-tab:focus,
+        .navbar-item.is-tab:hover {
+            border-bottom-color: var(--bulma-white);
+        }
+        .navbar-item.is-tab.is-active {
+            background-color: var(--bulma-link-color);
+            color: var(--bulma-white);
+        }
+    </style>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Get all "navbar-burger" elements
-        const $navbarBurgers = Array.prototype.slice.call(
-            document.querySelectorAll('.navbar-burger'),
-            0
-        );
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get all "navbar-burger" elements
+            const $navbarBurgers = Array.prototype.slice.call(
+                document.querySelectorAll('.navbar-burger'),
+                0
+            );
 
-        // Add a click event on each of them
-        $navbarBurgers.forEach((el) => {
-            el.addEventListener('click', () => {
-                // Get the target from the "data-target" attribute
-                const target = el.dataset.target;
-                const $target = document.getElementById(target);
+            // Add a click event on each of them
+            $navbarBurgers.forEach((el) => {
+                el.addEventListener('click', () => {
+                    // Get the target from the "data-target" attribute
+                    const target = el.dataset.target;
+                    const $target = document.getElementById(target);
 
-                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-                el.classList.toggle('is-active');
-                $target?.classList.toggle('is-active');
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target?.classList.toggle('is-active');
+                });
             });
         });
-    });
-</script>
+    </script>
+</nav>
