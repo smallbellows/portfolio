@@ -1,7 +1,7 @@
 ---
 title: 'Whale Tales'
 description: 'Custom WordPress theme'
-sortOrder: 1
+publishDate: '2025-04-01'
 tags: ['WordPress', 'Podcasting']
 img: './whale-tales.png'
 img_alt: 'Screenshot from whale-tales.org showing'

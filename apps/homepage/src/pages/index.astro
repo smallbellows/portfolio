@@ -15,11 +15,10 @@ import PortfolioPreview from '../components/PortfolioPreview.astro';
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
+import { sortWorkItems } from 'src/utils/sortWorkItems';
 
 // Content Fetching: List first four work items
-const projects = (await getCollection('work'))
-    .sort((a, b) => a.data.sortOrder - b.data.sortOrder)
-    .slice(0, 4);
+const projects = (await getCollection('work')).sort(sortWorkItems).slice(0, 4);
 ---
 
 <BaseLayout>

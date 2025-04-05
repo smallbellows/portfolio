@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-
+import { sortWorkItems } from '../utils/sortWorkItems';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
@@ -8,9 +8,7 @@ import PortfolioPreview from '../components/PortfolioPreview.astro';
 import Hero from '../components/Hero.astro';
 import Grid from '../components/Grid.astro';
 
-const projects = (await getCollection('work')).sort(
-    (a, b) => a.data.sortOrder - b.data.sortOrder
-);
+const projects = (await getCollection('work')).sort(sortWorkItems);
 ---
 
 <BaseLayout>
